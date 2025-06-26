@@ -1,0 +1,10 @@
+# using tuple
+tuple_login = ('ashutosh012', 'arush0543')
+
+username = input("Username: ")
+password = input("Password: ")
+
+if (username, password) == tuple_login:
+    print("Correct")
+else:
+    print("Not correct")
