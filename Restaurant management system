@@ -1,0 +1,41 @@
+# Login
+login_me = ('person', 'passw123')
+
+name = input("Enter your name: ")
+pwd = input("Enter password: ")
+
+if (name, pwd) != login_me:
+    print("Please try again!")
+    exit()
+else:
+    print("Welcome to the restaurant!")
+
+# Menu
+menu = [
+    ("Burger", 250),
+    ("Pizza", 350),
+    ("Noodles", 100),
+    ("Lassi", 150)
+]
+
+print("\n____ MENU ____")
+for item, price in menu:
+    print(f"{item} - ₹{price}")
+
+menu_dict = dict(menu)
+
+# Order and bill
+total = 0
+
+item = input("\nWhat would you like to order?: ").title()
+qty = int(input("How many?: "))
+
+if item in menu_dict:
+    cost = menu_dict[item] * qty
+    total += cost
+    print(f"\n{item} x {qty} = ₹{cost}")
+else:
+    print("Item not found in menu.")
+
+print(f"\nTotal Bill: ₹{total}")
+print("Please wait, your order is cooking...")
